@@ -52,18 +52,11 @@
           "description": "Specifies the number of the application gateway instances."
         }
       },
-      "backendIpAddress1": {
+      "backendIpAddress": {
         "type": "string",
-        "defaultValue": "10.0.1.10",
+        "defaultValue": "1.1.1.1",
         "metadata": {
-          "description": "IP Address for Backend Server 1"
-        }
-      },
-      "backendIpAddress2": {
-        "type": "string",
-        "defaultValue": "10.0.1.11",
-        "metadata": {
-          "description": "IP Address for Backend Server 2"
+          "description": "デプロイ完了後に変更するので規定値のままでOK"
         }
       },
       "wafEnabled": {
@@ -248,10 +241,7 @@
               "properties": {
                 "BackendAddresses": [
                   {
-                    "IpAddress": "[parameters('backendIpAddress1')]"
-                  },
-                  {
-                    "IpAddress": "[parameters('backendIpAddress2')]"
+                    "IpAddress": "[parameters('backendIpAddress')]"
                   }
                 ]
               }
