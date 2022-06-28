@@ -52,13 +52,6 @@
           "description": "Specifies the number of the application gateway instances."
         }
       },
-      "backendIpAddress": {
-        "type": "string",
-        "defaultValue": "1.1.1.1",
-        "metadata": {
-          "description": "デプロイ完了後に変更するので規定値のままでOK"
-        }
-      },
       "wafEnabled": {
         "type": "bool",
         "defaultValue": true,
@@ -240,7 +233,7 @@
               "properties": {
                 "BackendAddresses": [
                   {
-                    "IpAddress": "[parameters('backendIpAddress')]"
+                    "IpAddress": "[parameters('webSiteName')].azurewebsites.net"
                   }
                 ]
               }
